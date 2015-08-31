@@ -1,0 +1,20 @@
+namespace :alcoholic do
+    desc "工作郁闷,想喝点酒"
+    task :purchaseAlcohol do
+        puts "来瓶五粮液"
+    end
+    desc "得有点下酒菜"
+    task :mixDrink => :purchaseAlcohol do
+        puts "上盘花生米"
+    end
+    desc "开喝,不醉不归"
+    task :getSmashed => :mixDrink do
+        puts "老板,啥时候学的分身术,很强嘛?"
+    end
+end
+namespace :girlfriend do
+    desc "那个,喝点红酒"
+    task :purchaseAlcohol do
+        puts "来瓶干红"
+    end
+end

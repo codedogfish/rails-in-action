@@ -1,0 +1,14 @@
+desc "Create blank directories if they don't already exist"
+task(:create_directories) do
+    # The folders I need to create
+    shared_folders = ["icon","images","groups"]
+    for folder in shared_folders
+        # Check to see if it exists
+        if File.exist?(folder)
+            puts "#{folder} exists"
+        else
+            puts "#{folder} doesn't exists so we're creating"
+            Dir.mkdir "#{folder}"
+        end
+    end
+end
