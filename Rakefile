@@ -4,3 +4,9 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+# task default: %w[test]
+# 
+# task :test do
+#     puts "hello world"
+# end
