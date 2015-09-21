@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  hotel_id: 
+low-cost:
+  name: Low-Cost
+  hotel: like-home
 
-two:
-  name: MyString
-  hotel_id: 
+king-like:
+  name: King-Like
+  hotel: seven-days

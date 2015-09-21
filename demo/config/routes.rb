@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'words/learn'
+
+  get 'hotel/order'
+
   resources :room_categories
   resources :hotels
   # The priority is based upon order of creation: first created -> highest priority.

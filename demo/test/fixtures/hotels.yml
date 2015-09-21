@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+seven-days:
+  name: 七天连锁
+#  room_categories: [low-cost]
 
-two:
-  name: MyString
+like-home:
+  name: 如家酒店
+#  room_categories: [king-like]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921024916) do
+ActiveRecord::Schema.define(version: 20150921085359) do
 
   create_table "hotels", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20150921024916) do
   end
 
   add_index "room_categories", ["hotel_id"], name: "index_room_categories_on_hotel_id", using: :btree
+
+  create_table "words", force: :cascade do |t|
+    t.string   "eng",        limit: 255
+    t.string   "pl",         limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   add_foreign_key "room_categories", "hotels"
 end

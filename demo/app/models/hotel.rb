@@ -6,4 +6,9 @@ class Hotel < ActiveRecord::Base
     def to_s
         name
     end
+
+    def self.random
+        all = Hotel.all
+        all[rand(all.size)]
+    end
 end
