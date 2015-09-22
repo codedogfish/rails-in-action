@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pname:</strong>
+  <%= @provider_info.pname %>
+</p>
+
+<p>
+  <strong>Conperson:</strong>
+  <%= @provider_info.conPerson %>
+</p>
+
+<p>
+  <strong>Conpost:</strong>
+  <%= @provider_info.conPost %>
+</p>
+
+<p>
+  <strong>Conphonenum:</strong>
+  <%= @provider_info.conPhoneNum %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @provider_info.Address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @provider_info.Email %>
+</p>
+
+<%= link_to 'Edit', edit_provider_info_path(@provider_info) %> |
+<%= link_to 'Back', provider_infos_path %>
