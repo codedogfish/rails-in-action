@@ -6,6 +6,7 @@ set :application, "rails-in-action"
 set :repository,  "http://github.com/codedogfish/rails-in-action.git"
 set :keep_releases, 5          #只保留5个备份
 set :deploy_to, "/home/jackyu/#{application}"  #部署到远程机器的路径
+set :deploy_subdir, "demo"
 set :user, "jackyu"              #登录部署机器的用户名
 default_run_options[:pty] = true          #pty: 伪登录设备
 #default_run_options[:shell] = false     #Disable sh wrapping
@@ -36,12 +37,20 @@ role :db,  "server02", :primary => true # This is where Rails migrations will ru
 #   end
 # end
 namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "pid=`lsof -n -i:10000|grep TCP|grep LISTEN|grep IPv4|awk '{printf(\"%d\\n\"),$2}'` && echo $pid > #{deploy_to}/demo/pid"
-     run "kill $pid"
-     run "cd #{deploy_to}/demo && rails s -p 10000 -d"
-   end
-end
+    task :start do ; end
+    task :stop do ; end
+    task :restart, :roles => :app, :except => { :no_release => true } do
+        run "pid=`lsof -n -i:10000|grep TCP|grep LISTEN|grep IPv4|awk '{printf(\"%d\\n\"),$2}'` && echo $pid > #{deploy_to}/demo/pid"
+        run "kill $pid"
+        run "cd #{deploy_to}/demo && rails s -p 10000 -d"
+    end
 
+    desc "Checkout subdirectory and delete all the other stuff"
+    task :checkout_subdir do
+        run "mv #{current_release}/#{deploy_subdir}/ /tmp && rm -rf #{current_release}/* && mv /tmp/#{deploy_subdir}/* #{current_release}"
+    end
+end
+puts "register before"
+before "deploy:finalize_update" do
+    run "mv #{current_release}/#{deploy_subdir}/ /tmp && rm -rf #{current_release}/* && mv /tmp/#{deploy_subdir}/* #{current_release}"
+end
