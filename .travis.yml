@@ -1,0 +1,10 @@
+language: ruby
+sudo: false
+before_script:
+    - cd bdd
+    - gem install bundler
+    - bundle install
+rvm:
+    - ruby-head
+script:
+    - cucumber
