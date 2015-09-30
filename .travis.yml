@@ -1,6 +1,7 @@
 language: ruby
 sudo: false
 before_script:
+    - export USE_OFFICIAL_GEM_SOURCE=yes
     - cd bdd/calculator
     - gem install bundler
     - bundle install
