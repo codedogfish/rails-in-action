@@ -7,7 +7,10 @@ This project is used to practice on Ruby,Rails from books or online tutorial.
 Just a demo or test app
 
 ## ror
-The book 'Ruby on Rails in action' and some online tutorials.
+The book 'Ruby on Rails in action'
+
+## ol
+Some online tutorials
 
 ## meta
 The book 'Ruby Meta Programing'.
