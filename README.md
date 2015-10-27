@@ -18,6 +18,9 @@ The book 'Ruby Meta Programing'.
 ## bdd
 The book 'The Cucumber Book'
 
+## matz
+The book 'The Programming World of Matz'
+
 ## Code Status
 
 [![Build Status](https://travis-ci.org/codedogfish/ruby-in-action.svg?branch=master)](https://travis-ci.org/codedogfish/ruby-in-action)
